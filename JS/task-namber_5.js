@@ -16,3 +16,38 @@
 // Австралия - 170 кредитов
 // Индия - 80 кредитов
 // Ямайка - 120 кредитов
+
+
+const country = prompt('Укажите страну доставки товара.');
+const normalizedName = country.toLowerCase();
+// console.log(normalizedName);
+let price;
+
+switch(normalizedName) {
+        case 'китай':
+        price = 100;
+        break;
+        
+        case 'чили':
+        price = 250;
+        break;
+
+        case 'австралия':
+        case 'австралию':
+        price = 170;
+        break;
+
+        case 'индия':
+        case 'индию':
+        price = 80;
+        break;
+
+        case 'ямайка':
+        case 'ямайку':
+        price = 120;
+        break;
+    default:
+    alert('В вашей стране доставка не доступна.');
+    
+}
+console.log(`Доставка в ${normalizedName} будет стоить ${price} кредитов`)
