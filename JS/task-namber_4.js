@@ -16,3 +16,24 @@
 // 'Недостаточно средств на счету!'.
 // в противном случае необходимо посчитать остаток кредитов на счету и вывести сообщение 
 // 'Вы купили [число] дроидов, на счету осталось [число] кредитов.'.
+
+
+const credits = 23500;
+const pricePerDroid = 3000;
+let question = prompt('Сколько Вы хотите купить дронов?');
+// question = Number(question);
+console.log(question);
+
+const totalPrice = (question * pricePerDroid);
+console.log(totalPrice);
+
+const balance = (credits - totalPrice);
+console.log(balance);
+
+if(question === null || question === ''){
+    console.log('Отменено пользователем!');
+}else if(totalPrice <= credits){
+    console.log(`Вы купили ${question} дроидов, на счету осталось ${balance} кредитов.`);
+}else{
+    console.log('Недостаточно средств на счету!');
+}
