@@ -1,19 +1,34 @@
 // Задание 2
-// Напиши скрипт проверки количества товаров на складе. Есть переменные total 
-// (количество товаров на складе) и ordered (единиц товара в заказе).
+// Напиши скрипт подсчета стоимости гравировки украшений. 
+// Для этого создай функцию calculateEngravingPrice(message, pricePerWord) принимающую 
+// строку (в строке будут только слова и пробелы) и цену гравировки одного слова, 
+// и возвращающую цену гравировки всех слов в строке.
 
-// Сравни эти значения и по результатам выведи:
+// const calculateEngravingPrice = function(message, pricePerWord) {
+//   // твой код
+// };
 
-// Если в заказе указано число, превышающее количество товаров на складе, то выведи сообщение 
-// "На складе недостаточно твоаров!".
-// В другом случае выводи сообщение "Заказ оформлен, с вами свяжется менеджер".
-// Проверь работоспособность кода с разными значениями переменной ordered, например 20, 80 и 130.
+// /*
+//  * Вызовы функции для проверки работоспособности твоей реализации.
+//  */
+// console.log(
+//   calculateEngravingPrice(
+//     'Proin sociis natoque et magnis parturient montes mus',
+//     10,
+//   ),
+// ); // 80
 
+// console.log(
+//   calculateEngravingPrice(
+//     'Proin sociis natoque et magnis parturient montes mus',
+//     20,
+//   ),
+// ); // 160
 
+// console.log(
+//   calculateEngravingPrice('Donec orci lectus aliquam est magnis', 40),
+// ); // 240
 
-const total = 100;
-const ordered = 75;
-
-const reservation = total >= ordered ? 'Заказ оформлен, с вами свяжется менеджер.' : 'На складе недостаточно твоаров!';
-
-console.log(reservation);
+// console.log(
+//   calculateEngravingPrice('Donec orci lectus aliquam est magnis', 20),
+// ); // 120
