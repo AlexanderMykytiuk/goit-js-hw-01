@@ -26,14 +26,15 @@ logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
 //   'use strict';
 //   // Write code under this line
   
-//      for(let i = 0; i < array.length; i += 1) {
-       
-      
+//    let  result = ''; 
+  
+//   for(let i = 0; i < array.length; i += 1) {
+          
 //         array[i] = `${i + 1} - ${array[i]}\n`;
-//     		array[i] = array[i].slice(1, 1);
+    		
 //        }
 
-// 	return `${array}`;
+// 	return result += array.join('');  
 // }
 
 // console.log(getItemsString(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']));
