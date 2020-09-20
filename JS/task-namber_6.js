@@ -1,4 +1,4 @@
-Задание 6
+//Задание 6
 function mapArray(array) {
     'use strict';
     let numbers = new Array();

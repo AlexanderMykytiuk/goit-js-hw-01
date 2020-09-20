@@ -1,11 +1,11 @@
 // Задание 7 - дополнительное, выполнять не обязательно
 function filterArray(array) {
-    'use strict';
+   
     const numbers = [];
     for(let i = 0; i < array.length; i += 1) {
       // Write code under this line
       
-      if (array[i] = Number.isFinite(array[i])) {
+      if (Number.isFinite(array[i])) {
          numbers.push(array[i]);
       }
       
