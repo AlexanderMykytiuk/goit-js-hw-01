@@ -1,53 +1,39 @@
 // Задание 4
-// Напиши функцию formatString(string) которая принимает строку и форматирует ее если необходимо.
+// На счету пользователя есть 23580 кредитов, значение хранится в переменной credits (создай и присвой). 
+// Пользователь решает купить ремонтных дроидов, которые стоят по 3000 кредитов за штуку. 
+// Цена одного дроида хранится в переменной pricePerDroid (создай и присвой).
 
-// Если длина строки не превышает 40 символов, функция возвращает ее в исходном виде.
-// Если длина больше 40 символов, то функция обрезает строку до 40-ка символов 
-// и добавляет в конец строки троеточие '...', после чего возвращает укороченную версию.
+// При посещении страницы, используя prompt,
+//  необходимо спросить количество дроидов которые пользователь хочет купить и сохранить в переменную.
+
+// Напиши скрипт который:
+
+// Если в prompt была нажата кнопка Cancel, выводит в консоль сообщение 
+// 'Отменено пользователем!'.
+// В противном случае, рассчитывает общую цену заказа и сохраняет в переменной totalPrice.
+// Проверяет сможет ли пользователь оплатить заказ:
+// если сумма к оплате превышает количество кредитов на счету, выводи в консоль сообщение 
+// 'Недостаточно средств на счету!'.
+// в противном случае необходимо посчитать остаток кредитов на счету и вывести сообщение 
+// 'Вы купили [число] дроидов, на счету осталось [число] кредитов.'.
 
 
+const credits = 23500;
+const pricePerDroid = 3000;
+let question = prompt('Сколько Вы хотите купить дронов?');
+// question = Number(question);
+console.log(question);
 
-// const formatString = function(string) {
+const totalPrice = (question * pricePerDroid);
+console.log(totalPrice);
 
-//     const stringLength = string > string.slice(0, 40) ? string.concat('. . .') : string;
-     
-//     return stringLength
-// };
+const balance = (credits - totalPrice);
+console.log(balance);
 
-// /*
-//  * Вызовы функции для проверки работоспособности твоей реализации.
-//  */
-// console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
-// // вернется оригинальная строка
-
-// console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
-// // вернется форматированная строка
-
-// console.log(formatString('Curabitur ligula sapien.'));
-// // вернется оригинальная строка
-
-// console.log(formatString('Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.'));
-// // вернется форматированная строка
-
-function formatString (string, maxLength = 40) {
-    // Write code under this line
-    //return string.length
-    for (const value of string) {
-     if (string.length > maxLength) {
-          string = string.slice(0, 40).concat('...'); 
-     }
-      if (maxLength === 30) {
-          string = string.slice(0, 30).concat('...');
-      }
-    }
-    return string
-  }
-  
-  console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
-  // 'Curabitur ligula sapien, tincidunt non.'
-  
-  console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
-  // 'Vestibulum facilisis, purus nec pulvinar...'
-  
-  console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.', 30));
-  // 'Vestibulum facilisis, purus ne...'
+if(question === null || question === ''){
+    console.log('Отменено пользователем!');
+}else if(totalPrice <= credits){
+    console.log(`Вы купили ${question} дроидов, на счету осталось ${balance} кредитов.`);
+}else{
+    console.log('Недостаточно средств на счету!');
+}

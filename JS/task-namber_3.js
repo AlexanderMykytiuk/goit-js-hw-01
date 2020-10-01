@@ -1,78 +1,27 @@
 // Задание 3
-// Напиши фукцнию findLongestWord(string), которая принимает параметром произвольную строку
-//  (в строке будут только слова и пробелы) и возвращает самое длинное слово в этой строке.
+// Напиши скрипт имитирующий авторизацию администратора в панели управления.
 
-// const findLongestWord = function(string) {
-    
-//     let longestWord = string.split(' ');
-    
-//         console.table(longestWord);
+// Есть переменная message в которую будет записано сообщение о результате. 
+// При загрузке страницы у посетителя запрашивается пароль через prompt:
 
-//    for(const value of longestWord) {
-//     console.log(value);
+// Если нажали Cancel, записать в message строку 'Отменено пользователем!'
+// В протовном случае, если введен пароль который совпадает со значением константы ADMIN_PASSWORD, 
+// записать в message строку 'Добро пожаловать!'
+// В противном случае, то есть если ни одно из предыдущих условий не выполнилось,
+//  записать в message строку 'Доступ запрещен, неверный пароль!'
+// После всех проверок вывести в alert значение переменной message.
 
-//     if (value.length  > longestWord.length) {
-//         // longestWord = value; 
-      
-//     }
-    
-//     // return value
-    
-//   }
-  
-// };
 
-// // let longestWord = value[0];
 
-// // .length
-// function findLongestWord (string = "") {
-//   // Write code under this line
-//      //  smallValue = string[0]; 
-//  let smallValue = string.split(' ');
-   
-  
-//   for(const value of string) {
+const ADMIN_PASSWORD = 'jqueryismyjam';
+let message = prompt('Введите пароль');
+console.log(message);
 
-    
-//     if(value > smallValue) {
-//       smallValue = value;
-//      }
-   
-//   }
-//      return smallValue
-// };
+if(message === null){
+    alert('Отменено пользователем!');
+}else if(message === ADMIN_PASSWORD){
+    alert('Добро пожаловать!');
+}else{
+    alert('Доступ запрещен, неверный пароль!');
+}
 
-   
-
-// /*
-//  * Вызовы функции для проверки работоспособности твоей реализации.
-//  */
-// console.log(findLongestWord('The quick brown fox jumped over the lazy dog')); // 'jumped'
-
-// console.log(findLongestWord('Google do a roll')); // 'Google'
-
-// console.log(findLongestWord('May the force be with you')); // 'force'
-
-function findLongestWord (string = "") {
-  // Write code under this line
-  string = string.split(' ');
-  let largeValue = string[0];
-  
-  for (const value of string) {
-   
-    if (value.length > largeValue.length) {
-      largeValue = value;
-    }
-    
-  }
-  return largeValue;
-};
-
-//console.log(findLongestWord('The quick brown fox jumped over the lazy dog'));
-// 'jumped'
-
-//console.log(findLongestWord('Google do a roll'));
-// 'Google'
-
-//console.log(findLongestWord('May the force be with you'));
-// 'force'

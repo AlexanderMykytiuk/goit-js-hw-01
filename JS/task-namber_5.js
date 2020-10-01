@@ -1,34 +1,98 @@
 // Задание 5
-// Напиши функцию checkForSpam(message), принимающую 1 параметр message - строку. 
-// Функция проверяет ее на содержание слов spam и sale. 
-// Если нашли зарещенное слово то функция возвращает true, если запрещенных слов нет функция возвращает false. 
-// Слова в строке могут быть в произвольном регистре.
+// Пользователь может оформить доставку товара к себе в страну, указав ее при посещении страницы в prompt. 
+// Учти, пользователь может ввести имя страны не только буквами нижнего регистра, а к примеру 'кИтАЙ'.
 
-'use strict';
-const checkForSpam = function (str) {
-  let arrStr = str.split(' ');
+// Напиши скрипт который выводит сообщение о стоимости доставки в указанную страну. 
+// Обязательно используй switch. Формат сообщения: 
+// 'Доставка в [страна] будет стоить [цена] кредитов'.
 
-  for (let i = 0; i < arrStr.length; i += 1) {
-    let word = arrStr[i].toLowerCase;
+// Но доставка есть не везде, если указанной страны нет в списке, то выводи в alert сообщение
+//  'В вашей стране доставка не доступна'.
 
-    if (arrStr[i].toLowerCase === 'spam' || arrStr[i].toLowerCase === 'sale') {
-      return true;
-    }
+// Ниже приведен список стран и стоимость доставки.
 
-    return false;
-  }
-
-};
-
-// Вызовы функции для проверки
-
-console.log( checkForSpam('Latest technology news') ); // false
-
-console.log( checkForSpam('JavaScript weekly newsletter') ); // false
-
-console.log( checkForSpam('Get best sale offers now!') ); // true
-
-console.log( checkForSpam('[SPAM] How to earn fast money?') ); // true
+// Китай - 100 кредитов
+// Чили - 250 кредитов
+// Австралия - 170 кредитов
+// Индия - 80 кредитов
+// Ямайка - 120 кредитов
 
 
-//Як тут використати includes()????
+const country = prompt('Укажите страну доставки товара.');
+const normalizedName = country.toLowerCase();
+// console.log(normalizedName);
+let price;
+
+switch(normalizedName) {
+        case 'китай':
+        price = 100;
+        break;
+        
+        case 'чили':
+        price = 250;
+        break;
+
+        case 'австралия':
+        case 'австралию':
+        price = 170;
+        break;
+
+        case 'индия':
+        case 'индию':
+        price = 80;
+        break;
+
+        case 'ямайка':
+        case 'ямайку':
+        price = 120;
+        break;
+    default:
+    alert('В вашей стране доставка не доступна.');
+    
+}
+console.log(`Доставка в ${normalizedName} будет стоить ${price} кредитов`)
+
+// Не дуже зрозуміло як заставити користувача вводити країну в правильному відмінку?
+// const countryName = "ЧИЛИ";
+
+// const CANCELED_BY_USER = 'Отменено пользователем!';
+// const NO_DELIVERY = 'В выбранную страну доставка недоступна.';
+// const CHINA = 'Китай';
+// const AUSTRALIA = 'Австралия';
+// const INDIA = 'Индия';
+// const JAMAICA = 'Ямайка';
+// let message;
+// let price = 0;
+// let country;
+
+// if (countryName === null) {
+//   message = CANCELED_BY_USER;
+// } else {
+//   country = countryName[0].toUpperCase() + countryName.slice(1).toLowerCase(); // Write code on this line
+//   switch (country) {
+//   // Write code under this line
+//         case CHINA:
+//         price = 100;
+//         break;
+        
+//         case AUSTRALIA:
+//         price = 170;
+//         break;
+
+//         case INDIA:
+//         price = 80;
+//         break;
+
+//         case JAMAICA:
+//         price = 120;
+//         break;
+//     default:
+//    message = NO_DELIVERY;
+    
+//   }
+// }
+// if (price > 0) { // Write code on this line
+//   message = `Доставка в ${country} будет стоить ${price} кредитов`;
+// }
+
+// console.log(message);

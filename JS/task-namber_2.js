@@ -1,46 +1,19 @@
 // Задание 2
-// Напиши скрипт подсчета стоимости гравировки украшений. 
-// Для этого создай функцию calculateEngravingPrice(message, pricePerWord) принимающую 
-// строку (в строке будут только слова и пробелы) и цену гравировки одного слова, 
-// и возвращающую цену гравировки всех слов в строке.
+// Напиши скрипт проверки количества товаров на складе. Есть переменные total 
+// (количество товаров на складе) и ordered (единиц товара в заказе).
+
+// Сравни эти значения и по результатам выведи:
+
+// Если в заказе указано число, превышающее количество товаров на складе, то выведи сообщение 
+// "На складе недостаточно твоаров!".
+// В другом случае выводи сообщение "Заказ оформлен, с вами свяжется менеджер".
+// Проверь работоспособность кода с разными значениями переменной ordered, например 20, 80 и 130.
 
 
 
-const calculateEngravingPrice = function(message, pricePerWord) {
-  let total = 0;
- 
-  for(let i = 0; i < message.length; i += 1) {
+const total = 100;
+const ordered = 75;
 
-       message = message.split(' ');
-     console.table(message);
+const reservation = total >= ordered ? 'Заказ оформлен, с вами свяжется менеджер.' : 'На складе недостаточно твоаров!';
 
-       total = message.length * pricePerWord;
-
-    return `Total: ${total}`
-  }
-};
-
-/*
- * Вызовы функции для проверки работоспособности твоей реализации.
- */
-console.log(
-  calculateEngravingPrice(
-    'Proin sociis natoque et magnis parturient montes mus',
-    10,
-  ),
-); // 80
-
-console.log(
-  calculateEngravingPrice(
-    'Proin sociis natoque et magnis parturient montes mus',
-    20,
-  ),
-); // 160
-
-console.log(
-  calculateEngravingPrice('Donec orci lectus aliquam est magnis', 40),
-); // 240
-
-console.log(
-  calculateEngravingPrice('Donec orci lectus aliquam est magnis', 20),
-); // 120
+console.log(reservation);
